@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://b2jkvcnam4trc"]
+
+[ext_resource type="Texture2D" uid="uid://d0i1if2f8n026" path="res://assets/images/memory_shard/memories/Clouds_in_tiles.png" id="1_a6pud"]
+[ext_resource type="Texture2D" uid="uid://c6tdxbiio346h" path="res://assets/images/memory_shard/memories/shinies.png" id="1_c5y6f"]
+[ext_resource type="PackedScene" uid="uid://bioygla7dgf10" path="res://scenes/player.tscn" id="2_2c1wl"]
+[ext_resource type="Texture2D" uid="uid://23cl4efn5lin" path="res://assets/images/memory_shard/memories/key.png" id="3_2c1wl"]
+[ext_resource type="Script" uid="uid://50bq0il8l16b" path="res://scripts/animated_sprite_2d.gd" id="4_0cvqw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6pud"]
+atlas = ExtResource("3_2c1wl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cvqw"]
+atlas = ExtResource("3_2c1wl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lptuc"]
+atlas = ExtResource("3_2c1wl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndkqr"]
+atlas = ExtResource("3_2c1wl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxhmg"]
+atlas = ExtResource("3_2c1wl")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5su1"]
+atlas = ExtResource("3_2c1wl")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m27bf"]
+atlas = ExtResource("3_2c1wl")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrm62"]
+atlas = ExtResource("3_2c1wl")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhoei"]
+atlas = ExtResource("3_2c1wl")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngavr"]
+atlas = ExtResource("3_2c1wl")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tf64m"]
+atlas = ExtResource("3_2c1wl")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx6to"]
+atlas = ExtResource("3_2c1wl")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sx6to"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6pud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cvqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lptuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndkqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxhmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5su1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m27bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrm62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhoei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngavr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tf64m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx6to")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cseeo"]
+
+[node name="memory" type="Node2D" unique_id=2041356587]
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=686183214]
+texture_filter = 1
+position = Vector2(644, 550)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_sx6to")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.92507094
+script = ExtResource("4_0cvqw")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D2" unique_id=1112024563]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D2/Area2D" unique_id=86921755]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("CircleShape2D_cseeo")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=453863892]
+texture_filter = 1
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_a6pud")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1256626020]
+texture_filter = 1
+offset_left = -18.0
+offset_top = 5.0
+offset_right = 1282.0
+offset_bottom = 725.0
+texture = ExtResource("1_c5y6f")
+
+[node name="player" parent="." unique_id=288168503 instance=ExtResource("2_2c1wl")]
+position = Vector2(82, 113)
+
+[connection signal="body_entered" from="AnimatedSprite2D2/Area2D" to="AnimatedSprite2D2" method="_on_area_2d_body_entered"]

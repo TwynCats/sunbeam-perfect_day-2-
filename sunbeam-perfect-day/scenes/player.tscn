@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dg82sg2w0fm6" path="res://assets/images/player/Fox_Run.png" id="2_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcs68"]
-size = Vector2(28.285717, 20.714285)
+size = Vector2(23.285717, 18.964287)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
 atlas = ExtResource("1_onrkg")
@@ -204,11 +204,11 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=288168503]
-scale = Vector2(7, 7)
+scale = Vector2(2, 2)
 script = ExtResource("1_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=994763644]
-position = Vector2(-0.8571419, 0.3571423)
+position = Vector2(1.6428571, 1.2321422)
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_vcs68")
 
@@ -217,4 +217,4 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_eg4jb")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.4186623
+frame_progress = 0.5880228

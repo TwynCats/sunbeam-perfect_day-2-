@@ -33,4 +33,4 @@ func _physics_process(delta: float) -> void:
 	if direction == 1.0:
 		animated_sprite_2d.flip_h = false
 	if direction == -1.0:
-		animated_sprite_2d.flip_h = true
+		animated_sprite_2d.flip_h = true		

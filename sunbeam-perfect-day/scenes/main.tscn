@@ -1,18 +1,8 @@
 [gd_scene format=3 uid="uid://c7oppa8llaoff"]
 
-[ext_resource type="PackedScene" uid="uid://bioygla7dgf10" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://rdjefn08nvsb" path="res://scenes/level_root.tscn" id="3_sugp2"]
 
 [node name="main" type="Node2D" unique_id=1117769860]
 
-[node name="player" parent="." unique_id=288168503 instance=ExtResource("1_o5qli")]
-position = Vector2(538.99994, 551.99994)
-
 [node name="level_root" parent="." unique_id=754215245 instance=ExtResource("3_sugp2")]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1178413186]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=695403575]
-position = Vector2(7, 708)
-build_mode = 1
-polygon = PackedVector2Array(-3, 2, -12, -170, 30, -241, 129, -132, 275, -132, 379, -29, 768, -38, 952, -220, 1266, -222, 1268, -3)
+position = Vector2(20, -8)
